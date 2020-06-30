@@ -6,7 +6,7 @@ export const getTagByName = ({tags}, tagName) => tags[tagName];
 /* ACTIONS */
 
 /*
-// action name creator
+action name creator
 const reducerName = 'tags';
 const createActionName = name => `app/${reducerName}/${name}`;
 
