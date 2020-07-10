@@ -7,8 +7,6 @@ import PropTypes from 'prop-types';
 import pricing from '../../../data/pricing.json';
 
 const OrderForm = ({options, tripCost, setOrderOption}) => {
-  console.log(options);
-  console.log(pricing);
   return (
     <Grid>
       <Row>
@@ -27,7 +25,7 @@ const OrderForm = ({options, tripCost, setOrderOption}) => {
 };
 
 OrderForm.propTypes = {
-  options: PropTypes.node,
+  options: PropTypes.object,
   setOrderOption: PropTypes.func,
   tripCost: PropTypes.string,
 };

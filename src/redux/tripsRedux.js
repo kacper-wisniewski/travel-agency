@@ -19,6 +19,7 @@ export const getFilteredTrips = ({trips, filters}) => {
   // TODO - filter by tags
   if(filters.duration) {
     // TODO filter by duration!!!
+    // Problem filtrowanie po przedziale
   }
   // TODO - sort by cost descending (most expensive goes first)
 

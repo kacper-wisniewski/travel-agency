@@ -13,7 +13,7 @@ const OrderSummary = ({baseCost, tripOptions}) => {
 
 OrderSummary.propTypes = {
   baseCost: PropTypes.string,
-  tripOptions: PropTypes.node,
+  tripOptions: PropTypes.object,
   calculateTotal: PropTypes.func,
   formatPrice: PropTypes.func,
 };
