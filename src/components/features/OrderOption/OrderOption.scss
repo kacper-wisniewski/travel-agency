@@ -28,6 +28,13 @@
 
   &Active {
     background: $color-primary;
+    padding: ($base-size / 2);
+    width: 80%;
+    cursor: pointer;
+
+    i {
+      padding-right: ($base-size / 2);
+    }
   }
 }
 

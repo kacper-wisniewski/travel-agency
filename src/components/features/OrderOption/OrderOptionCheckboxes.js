@@ -1,14 +1,39 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import styles from './OrderOption.scss';
+import {formatPrice} from '../../../utils/formatPrice';
 
-const OrderOptionCheckboxes = () => {
-  return (
-    <div>Order Option Checkboxes</div>
-  );
+
+const newValueSet = (currentValue, id, checked) => {
+  if(checked){
+    return [
+      ...currentValue,
+      id,
+    ];
+  } else {
+    return currentValue.filter(value => value != id);
+  }
 };
 
-/*OrderOptionCheckboxes.propTypes = {
-  
-};*/
+const OrderOptionCheckboxes = ({values, currentValue, setOptionValue}) => (
+  <div className={styles.checkboxes}>
+    {values.map(value => (
+      <label key={value.key}>
+         
+        {currentValue.indexOf(value.id) > -1 ? 
+          <input type='checkbox' value={value.id} defaultChecked onChange={event => setOptionValue(newValueSet(currentValue, value.id, event.currentTarget.checked))}/> : 
+          <input type='checkbox' value={value.id} onChange={event => setOptionValue(newValueSet(currentValue, value.id, event.currentTarget.checked))}/>
+        }
+        {value.name} ({formatPrice(value.price)})
+      </label>
+    ))}
+  </div>
+);
+
+OrderOptionCheckboxes.propTypes = {
+  values: PropTypes.array,
+  currentValue: PropTypes.node,
+  setOptionValue: PropTypes.func,
+};
 
 export default OrderOptionCheckboxes;
