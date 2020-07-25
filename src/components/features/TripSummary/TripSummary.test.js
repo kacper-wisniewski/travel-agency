@@ -45,4 +45,13 @@ describe('Component TripSummary', () =>{
     const component = shallow(<TripSummary days={days} id={id} name={name} cost={cost} tags={tags} />);
     expect(component.find('.details').text()).toEqual(expectedText);
   });
+  it('should render correct tags', () => {
+    const cost = 'cost-101';
+    const tags = ['tag1', 'tag2', 'tag3'];
+    const days = 7;
+    const id = 'test-id';
+    const name = 'name';
+    const component = shallow(<TripSummary days={days} id={id} name={name} cost={cost} tags={tags} />);
+    expect(component.find('.tags').childAt(0).text()).toEqual(tags[0]);
+  });
 });
