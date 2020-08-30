@@ -11,15 +11,17 @@ export const getFilteredTrips = ({trips, filters}) => {
     output = output.filter(trip => pattern.test(trip.name));
   }
 
-  // TODO - filter by duration
+  // TODO - filter by tags
   if(filters.tags) {
     const pattern = new RegExp(filters.tags, 'i');
     output = output.filter(trip => pattern.test(trip.tags));
   }
-  // TODO - filter by tags
+  // TODO - filter by duration
   if(filters.duration) {
-    // TODO filter by duration!!!
-    // Problem filtrowanie po przedziale
+    const to = filters.duration.to;
+    const from = filters.duration.from;
+    console.log(`FROM: ${from}, TO: ${to}`);
+    output = output.filter(trip => trip.days >= from && trip.days <= to);
   }
   // TODO - sort by cost descending (most expensive goes first)
 

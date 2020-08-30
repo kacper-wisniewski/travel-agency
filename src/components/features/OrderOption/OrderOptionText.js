@@ -11,7 +11,7 @@ const OrderOptionText = ({currentValue, setOptionValue}) => (
 OrderOptionText.propTypes = {
   values: PropTypes.array,
   required: PropTypes.bool,
-  currentValue: PropTypes.object,
+  currentValue: PropTypes.string,
   setOptionValue: PropTypes.func,
 };
 
