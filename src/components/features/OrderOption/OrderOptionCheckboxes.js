@@ -10,8 +10,6 @@ const newValueSet = (currentValue, id, checked) => {
       ...currentValue,
       id,
     ];
-  } else {
-    return currentValue.filter(value => value != id);
   }
 };
 
