@@ -11,6 +11,7 @@ const newValueSet = (currentValue, id, checked) => {
       id,
     ];
   }
+  return currentValue.filter(value => value != id);
 };
 
 const OrderOptionCheckboxes = ({values, currentValue, setOptionValue}) => (
